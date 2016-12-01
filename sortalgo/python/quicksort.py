@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 # Quicksort from https://interactivepython.org/runestone/static/pythonds/SortSearch/TheQuickSort.html
 
 def quickSort(alist):
