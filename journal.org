@@ -1,0 +1,57 @@
+# -*- mode: org -*-
+# -*- coding: utf-8 -*-
+#+STARTUP: overview indent inlineimages
+#+TITLE:      Notebook for ER01 project
+#+AUTHOR:     Maverick Chardet, Raphael Monat, Etienne Moutot
+#+LANGUAGE:   en
+#+OPTIONS:    H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:    TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+TAGS: TODO(t)
+
+Git repo: https://github.com/rmonat/ER01
+Pad vrac: http://pad.aliens-lyon.fr/p/ER01CLMM--
+
+* Compile all executables                                              :TODO:
+Use ~make~ in main dir to make all executables.
+TODO: global makefile
+* Experiment 1
+** Executables
+*** design of array generator
+- Input: Arguments:  
+  1. Seed for random generator 
+  2. Array size
+*** design of single sort programs
+- Input:  stdin: integer separated by spaces: ~length n1 n2 ...~
+- Output: stdout: sort time
+** Experiment settings
+*** Input: array
+*** Output: Sort time
+*** Factors
+**** Controllable factors:
+  - Input size
+  - Compilation options
+  - Allowed memory
+**** not so controllable but mesurable:
+  - SSD/HDD
+  - hardware (CPU, motherboard, etc)
+**** Uncontrollable factors:
+  - Other processes on the computer -> Launch ONLY experiment after booting
+  - Temperature
+  - Vibrations
+  - Cache allocations
+*** Measure time of experiments
+Use both:
+**** internal measure in programs 
+Allow to measure only sort time. 
+gettimeofday or (better) clock gettime(CLOCK REALTIME,&tv);); http://mescal.imag.fr/membres/arnaud.legrand/teaching/2015/M2R_EP_measurements.pdf
+**** whichtime: external linux time 
+Measure global time including I/O
+(! time given in h:m:s)
+** Experimental process (experiment.py)
+*** 1. Generate dataset
+The set of random arrays is generated using ~generation/generate32~.
+We generate ?? arrays of sizes 10^1 - 10^8 with step x2. 
+We genreate ?? arrays of each sizes.
+*** 2. Run executables
+All executable are run ?? times on every generated arrays.
+* Results
