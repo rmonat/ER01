@@ -1,5 +1,5 @@
 generate32: generate32.cpp
-	g++ -O3 generate32.cpp -o generate32
+	g++ -std=c++11 -O3 generate32.cpp -o generate32
 
 .PHONY: clean
 
