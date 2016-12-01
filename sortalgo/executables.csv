@@ -14,4 +14,4 @@ D,gdc,O3,sort,d/sort.d,d/sortgdcO3
 OCaml,ocamlbuild,,heap_sort,ocaml/heap_sort.ml,ocaml/heap_sort.native
 OCaml,ocamlbuild,,merge_sort,ocaml/merge_sort.ml,ocaml/merge_sort.native
 Python,python3,,quicksort,python/quicksort.py,python/quicksort.py
-Python,python3,,sort,python/sort.py,python/sort.py 
+Python,python3,,sort,python/sort.py,python/sort.py

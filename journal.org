@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #+STARTUP: overview indent inlineimages
 #+TITLE:      Notebook for ER01 project
-#+AUTHOR:     Maverick Chardet, Raphael Monat, Etienne Moutot
+#+AUTHOR:     Maverick Chardet, Victor Lutfalla Raphael Monat, Etienne Moutot
 #+LANGUAGE:   en
 #+OPTIONS:    H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:    TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -51,7 +51,8 @@ Measure global time including I/O
 *** 1. Generate dataset
 The set of random arrays is generated using ~generation/generate32~.
 We generate ?? arrays of sizes 10^1 - 10^8 with step x2. 
-We genreate ?? arrays of each sizes.
+5 files from each step, right now steps = 10^i, 1 <= i <= 8
+We generate ?? arrays of each sizes.
 *** 2. Run executables
 All executable are run ?? times on every generated arrays.
 * Results
