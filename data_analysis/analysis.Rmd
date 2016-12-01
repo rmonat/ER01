@@ -29,32 +29,18 @@ str(sort_data)
 first ploting function, it is not very clear
 ```{r}
 
-ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=factor(Language))) + geom_point() + scale_x_log10() + scale_y_log10()
+ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=factor(Options))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Language)
 ```
 
 filtering by language, or size, or anything
 ```{r}
-data_size106 = subset(sort_data, Input_size == 100000)
-str(data_size106)
-ggplot( data = data_size106, aes(x= Input_size, y = Execution_time, color=Language)) + geom_point()
-
-data_size101 = subset(sort_data, Input_size == 10)
-str(data_size101)
-ggplot( data = data_size101, aes(x= Input_size, y = Execution_time, color=Language)) + geom_point()
-
-
-
-
-
-
-
-
 
 data_cpp = subset(sort_data, Language == "CPP")
 
 
 str(data_cpp)
 
+ggplot( data = data_cpp, aes(x= Input_size, y = Execution_time, color=Options)) + geom_point() + scale_x_log10() + scale_y_log10() + theme_bw() + geom_smooth() +
 
 
 ```
