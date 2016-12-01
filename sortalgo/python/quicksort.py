@@ -44,6 +44,6 @@ def partition(alist,first,last):
 
 import fileinput
 
-alist=fileinput.input()[0].split()[1:]
+alist=list(map(int, fileinput.input()[0].split()[1:]))
 quickSort(alist)
-print(" ".join(map(str,alist)))
+print(" ".join(map(str, alist)))
