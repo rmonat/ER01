@@ -20,7 +20,7 @@ library(ggplot2)
 
 loading our data from a csv file
 ```{r}
-sort_data = read.csv("example.csv")
+sort_data = read.csv("../results.csv")
 summary(sort_data)
 str(sort_data)
 
@@ -29,7 +29,7 @@ str(sort_data)
 first ploting function, it is not very clear
 ```{r}
 
-ggplot( data = sort_data, aes(x=log(Input_size), y=Execution_time, color=factor(Executable_used), shape = factor(Language))) + geom_point()
+ggplot( data = sort_data, aes(x=log(Input_size), y=log(Execution_time),color=Input_name)) + geom_point()
 ```
 
 filtering by programming language
