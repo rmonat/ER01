@@ -1,20 +1,21 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <cstdint>
 
 using namespace std;
 
 
-int main()
-{
-    int n;
-    vector<int> tab;
-    cin >> n;
-    tab.resize(n);
-    for(int i = 0; i < n; i++)
-	cin >> tab[i];
-    sort(tab.begin(), tab.end());
-    for(int i = 0; i < n; i++)
-	cout << tab[i] << " ";
-    cout << endl;
+int main() {
+	unsigned long len;
+	cin >> len;
+	vector<int_fast32_t> arr(len);
+	for (unsigned long i = 0; i < len; ++i)
+		cin >> arr[i];
+	sort(arr.begin(), arr.end());
+	for(unsigned long i = 0; i < len; ++i)
+		cout << arr[i] << " ";
+	cout << endl;
+	
+	return 0;
 }
