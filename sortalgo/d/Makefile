@@ -1,4 +1,4 @@
-all: sort.
+all: sort.d
 	gdc -O0 sort.d -o sortgdcO0
 	gdc -O1 sort.d -o sortgdcO1
 	gdc -O2 sort.d -o sortgdcO2

@@ -7,20 +7,24 @@
 #include <string>
 
 int main(int argc, char* argv[]) {
-	if (argc != 2) {
-		std::cerr << "Error: one argument expected, size of the array." << std::endl;
+	if (argc == 1) {
+		std::cerr << "Usage: " << argv[0] << " <seed> <nb elements>" << std::endl;
 		return 1;
 	}
-	unsigned long size;
-	try {
-		size = std::stoul(argv[1]);
-	} catch(...) {
-		std::cerr << "Error: positive integer expected as argument, size of the array." << std::endl;
+	if (argc != 3) {
+		std::cerr << "Error: two arguments expected, seed and size of the array." << std::endl;
 		return 2;
 	}
+	int32_t seed;
+	unsigned long size;
+	try {
+		seed = static_cast<int32_t>(std::stoi(argv[1]));
+		size = std::stoul(argv[2]);
+	} catch(...) {
+		std::cerr << "Error: the seed should be an integer and the number of elements a positive integer." << std::endl;
+		return 3;
+	}
 	
-	
-	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	std::default_random_engine eng(seed);
 	std::uniform_int_distribution<int32_t> intdist(std::numeric_limits<int32_t>::min(), std::numeric_limits<int32_t>::max());
 	
