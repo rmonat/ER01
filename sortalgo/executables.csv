@@ -1,15 +1,17 @@
-Language, Compilator, Option, Algorithm, Executable
-CPP, g++, O0, STL, cpp/stl_sortO0
-CPP, g++, O1, STL, cpp/stl_sortO1
-CPP, g++, O2, STL, cpp/stl_sortO2
-CPP, g++, O3, STL, cpp/stl_sortO3
-CPP, g++, O0, stupid_quicksort, cpp/stupid_quicksortO0
-CPP, g++, O1, stupid_quicksort, cpp/stupid_quicksortO1
-CPP, g++, O2, stupid_quicksort, cpp/stupid_quicksortO2
-CPP, g++, O3, stupid_quicksort, cpp/stupid_quicksortO3
-D, gdc, O0, sort, d/sortgdcO0
-D, gdc, O1, sort, d/sortgdcO1
-D, gdc, O2, sort, d/sortgdcO2
-D, gdc, O3, sort, d/sortgdcO3
-OCaml, ocamlbuild, , heap_sort, ocaml/heap_sort.native
-OCaml, ocamlbuild, , merge_sort, ocaml/merge_sort.native
+Language,Compiler,Option,Algorithm,Source_code,Executable
+CPP,g++,O0,STL,cpp/stl_sort.cpp,cpp/stl_sortO0
+CPP,g++,O1,STL,cpp/stl_sort.cpp,cpp/stl_sortO1
+CPP,g++,O2,STL,cpp/stl_sort.cpp,cpp/stl_sortO2
+CPP,g++,O3,STL,cpp/stl_sort.cpp,cpp/stl_sortO3
+CPP,g++,O0,stupid_quicksort,cpp/stupid_quicksort.cpp,cpp/stupid_quicksortO0
+CPP,g++,O1,stupid_quicksort,cpp/stupid_quicksort.cpp,cpp/stupid_quicksortO1
+CPP,g++,O2,stupid_quicksort,cpp/stupid_quicksort.cpp,cpp/stupid_quicksortO2
+CPP,g++,O3,stupid_quicksort,cpp/stupid_quicksort.cpp,cpp/stupid_quicksortO3
+D,gdc,O0,sort,d/sort.d,d/sortgdcO0
+D,gdc,O1,sort,d/sort.d,d/sortgdcO1
+D,gdc,O2,sort,d/sort.d,d/sortgdcO2
+D,gdc,O3,sort,d/sort.d,d/sortgdcO3
+OCaml,ocamlbuild,,heap_sort,ocaml/heap_sort.ml,ocaml/heap_sort.native
+OCaml,ocamlbuild,,merge_sort,ocaml/merge_sort.ml,ocaml/merge_sort.native
+Python,python3,,quicksort,python/quicksort.py,python/quicksort.py
+Python,python3,,sort,python/sort.py,python/sort.py 
