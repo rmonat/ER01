@@ -1,4 +1,4 @@
-Language, Compilator, Option, Algorithm, Executable
+Language, Compiler, Option, Algorithm, Executable
 CPP, g++, O0, STL, cpp/stl_sortO0
 CPP, g++, O1, STL, cpp/stl_sortO1
 CPP, g++, O2, STL, cpp/stl_sortO2
