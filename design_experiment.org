@@ -1,0 +1,30 @@
+# -*- mode: org -*-
+# -*- coding: utf-8 -*-
+#+STARTUP: overview indent inlineimages
+#+TITLE:      Notebook for ER01 project
+#+AUTHOR:     Maverick Chardet, Raphael Monat, Etienne Moutot
+#+LANGUAGE:   en
+#+OPTIONS:    H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:    TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+
+* Experiment
+** Overall design
+*** Input: array
+*** Output: Sort time
+*** Factors
+**** Controllable factors:
+  - Input size
+  - Compilation options
+  - Allowed memory
+**** not so controllable but mesurable:
+  - SSD/HDD
+  - hardware (CPU, motherboard, etc)
+**** Uncontrollable factors:
+  - Other processes on the computer -> Launch ONLY experiment after booting
+  - Temperature
+  - Vibrations
+  - Cache allocations
+*** Measure time ?
+
+
+* Statistics
