@@ -1,5 +1,4 @@
-all: sort.d
-	dmd -O -release -inline -boundscheck=off sort.d -ofsortdmd
+all: sort.
 	gdc -O0 sort.d -o sortgdcO0
 	gdc -O1 sort.d -o sortgdcO1
 	gdc -O2 sort.d -o sortgdcO2
