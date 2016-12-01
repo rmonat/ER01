@@ -7,3 +7,9 @@ CPP, g++, O0, stupid_quicksort, cpp/stupid_quicksortO0
 CPP, g++, O1, stupid_quicksort, cpp/stupid_quicksortO1
 CPP, g++, O2, stupid_quicksort, cpp/stupid_quicksortO2
 CPP, g++, O3, stupid_quicksort, cpp/stupid_quicksortO3
+D, gdc, O0, sort, d/sortgdcO0
+D, gdc, O1, sort, d/sortgdcO1
+D, gdc, O2, sort, d/sortgdcO2
+D, gdc, O3, sort, d/sortgdcO3
+OCaml, ocamlbuild, , heap_sort, ocaml/heap_sort.native
+OCaml, ocamlbuild, , merge_sort, ocaml/merge_sort.native
