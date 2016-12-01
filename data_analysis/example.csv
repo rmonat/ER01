@@ -1,0 +1,16 @@
+Machine,Language,Algorithm,Options,Executable_used,Input_name,Input_size,Execution_time
+hubertpc,CPP,sort,O0,algosort/cpp/test0,fichier0,100,12
+hubertpc,CPP,sort,O1,algosort/cpp/test1,fichier0,100,8
+hubertpc,CPP,sort2,O0,algosort/cpp/test2,fichier0,100,21
+hubertpc,CPP,sort2,O1,algosort/cpp/test3,fichier0,100,13
+hubertpc,CPP,sort,O0,algosort/cpp/test0,fichier1,200,15
+hubertpc,CPP,sort,O1,algosort/cpp/test1,fichier1,200,12
+hubertpc,CPP,sort2,O0,algosort/cpp/test2,fichier1,200,30
+hubertpc,CPP,sort2,O1,algosort/cpp/test3,fichier1,200,20
+hubertpc,CPP,sort,O0,algosort/cpp/test0,fichier2,300,30
+hubertpc,CPP,sort,O1,algosort/cpp/test1,fichier2,300,13
+hubertpc,CPP,sort2,O0,algosort/cpp/test2,fichier2,300,45
+hubertpc,CPP,sort2,O1,algosort/cpp/test3,fichier2,300,25
+hubertpc,OCaml,sort3,,algosort/ocaml/test4,fichier0,100,23
+hubertpc,OCaml,sort3,,algosort/ocaml/test4,fichier1,200,30
+hubertpc,OCaml,sort3,,algosort/ocaml/test4,fichier2,300,35
