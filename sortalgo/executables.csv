@@ -1,0 +1,9 @@
+Language, Compilator, Option, Algorithm, Executable
+CPP, g++, O0, STL, cpp/stl_sortO0
+CPP, g++, O1, STL, cpp/stl_sortO1
+CPP, g++, O2, STL, cpp/stl_sortO2
+CPP, g++, O3, STL, cpp/stl_sortO3
+CPP, g++, O0, stupid_quicksort, cpp/stupid_quicksortO0
+CPP, g++, O1, stupid_quicksort, cpp/stupid_quicksortO1
+CPP, g++, O2, stupid_quicksort, cpp/stupid_quicksortO2
+CPP, g++, O3, stupid_quicksort, cpp/stupid_quicksortO3
