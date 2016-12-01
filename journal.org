@@ -51,6 +51,7 @@ Measure global time including I/O
 *** 1. Generate dataset
 The set of random arrays is generated using ~generation/generate32~.
 We generate ?? arrays of sizes 10^1 - 10^8 with step x2. 
+5 files from each step, right now steps = 10^i, 1 <= i <= 8
 We generate ?? arrays of each sizes.
 *** 2. Run executables
 All executable are run ?? times on every generated arrays.
