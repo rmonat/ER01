@@ -6,7 +6,7 @@ import random
 
 conf = csv.reader(open("executables.csv"))
 input_files = ['10-1.in', '10-2.in', '10-3.in', '10-4.in', '10-5.in', '100-1.in', '100-2.in', '100-3.in', '100-4.in', '100-5.in', '1000-1.in', '1000-2.in', '1000-3.in', '1000-4.in', '1000-5.in', '10000-1.in', '10000-2.in', '10000-3.in', '10000-4.in', '10000-5.in', '100000-1.in', '100000-2.in', '100000-3.in', '100000-4.in', '100000-5.in', '1000000-1.in', '1000000-2.in', '1000000-3.in', '1000000-4.in', '1000000-5.in', '10000000-1.in', '10000000-2.in', '10000000-3.in', '10000000-4.in', '10000000-5.in']#, '100000000-1.in', '100000000-2.in', '100000000-3.in', '100000000-4.in', '100000000-5.in']
-csv = open("results.csv", 'a')
+csv = open("results_" + os.uname()[1] + ".csv", 'a')
 
 
 def bench(ex, i):
@@ -19,8 +19,8 @@ def bench(ex, i):
     input_size = i.split("/")[-1].split("-")[0]
     # file name : size-version.in
     t = timeit.Timer(stmt = "subprocess.call(%s, stdin=inp, stdout=devnull, stderr=devnull)" % (cmd_params), setup = "import subprocess; devnull = open('/tmp/blu', 'w'); inp = open('%s', 'r')""" % i)
-    reps = 1 # no repetition yet
-    exec_time = sum(t.repeat(reps, number=1)) / reps
+    reps = 3 # no repetition yet
+    exec_time = min(t.repeat(reps, number=1)) # recommended by python doc... # sum(t.repeat(reps, number=1)) / reps
     csv.write("%s,%s,%s,%s,%s,%s,%s,%s\n" % (machine, language, algo, options, executable_used, i.split("/")[-1], input_size, exec_time))
     csv.flush()
 
