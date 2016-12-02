@@ -40,7 +40,7 @@ data_cpp = subset(sort_data, Language == "CPP")
 
 str(data_cpp)
 
-ggplot( data = data_cpp, aes(x= Input_size, y = Execution_time, color=Options)) + geom_point() + scale_x_log10() + scale_y_log10() + theme_bw() + geom_smooth() +
+ggplot( data = data_cpp, aes(x= Input_size, y = Execution_time, color=Input_name)) + geom_point() + theme_bw() + geom_smooth(method = "loess") + scale_x_log10() + scale_y_log10() + facet_wrap(~ Options) 
 
 
 ```
