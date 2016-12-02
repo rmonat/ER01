@@ -51,7 +51,7 @@ gettimeofday or (better) clock gettime(CLOCK REALTIME,&tv);); http://mescal.imag
 **** whichtime: external linux time 
 Measure global time including I/O
 (! time given in h:m:s)
-** Experimental process (experiment.py)
+** Experimental process (bench.py)
 *** 1. Generate dataset
 The set of random arrays is generated using ~generation/generate32~.
 We generate ?? arrays of sizes 10^1 - 10^8 with step x2. 
