@@ -43,8 +43,10 @@ def partition(alist,first,last):
    return rightmark
 
 
-import fileinput
+import fileinput, time
 
 alist=list(map(int, fileinput.input()[0].split()[1:]))
+before = time.perf_counter()
 quickSort(alist)
-print(" ".join(map(str, alist)))
+after = time.perf_counter()
+print(int(1000*(after-before)))
