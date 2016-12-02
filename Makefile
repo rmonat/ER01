@@ -4,4 +4,4 @@ all:
 
 clean:
 	cd sortalgo && $(MAKE) clean
-	cd generation && $(MAKE)
+	cd generation && $(MAKE) clean
