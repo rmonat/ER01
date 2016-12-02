@@ -2,7 +2,7 @@
 title: "projet_ER01"
 author: "vlutfall"
 date: "December 1, 2016"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +20,7 @@ library(ggplot2)
 
 loading our data from our csv file
 ```{r}
-sort_data = read.csv("../results.csv")
+sort_data = read.csv("../results/global_results_local.csv")
 summary(sort_data)
 str(sort_data)
 
@@ -41,15 +41,21 @@ ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=Language)) +
 
 selecting only the best optimisation for CPP and D
 ```{r}
-data_optim = subset(sort_data,  Options == "O3" | Options == "")
+data_optim = subset(sort_data,  Options == "O3")
 summary(data_optim)
 str(data_optim)
 
-ggplot( data = data_optim, aes(x=Input_size, y=Execution_time, color=factor(Machine))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_wrap(~  Language )
 
-ggplot( data = data_optim, aes(x=Input_size, y=Execution_time, color=Language)) + geom_point() + scale_x_log10() + scale_y_log10() 
 
+```
+
+plot with separation by algorithms: 
+algo1 = STL for CPP, sortgdc for D, heap_sort for OCaml and sort.py for Python
+algo 2 = stupid_quicksort for CPP, None for D, merge_sort for OCaml and  quicksort for Python
 ```{r}
+
+ggplot( data = data_optim, aes(x=Input_size, y=Execution_time, color=factor(Machine))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_grid(Algorithm ~  Language )
+
 
 ```
 
@@ -61,6 +67,12 @@ str(data_cpp)
 
 ggplot( data = data_cpp, aes(x=Input_size, y=Execution_time, color=Machine)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Options) 
 
+
+ggplot( data = data_cpp, aes(x=Input_size, y=Execution_time, color=Machine)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10() + facet_grid(Algorithm ~ Options)
+
+data_ccp_rmonat = subset(data_cpp , Machine == "XPSR")
+str(data_ccp_rmonat)
+## ggplot( data = data_cpp_rmonat , aes(x=Input_size, y=Execution_time, color=Algorithm)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Options) 
 
 ```
 
