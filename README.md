@@ -11,7 +11,7 @@ python3 bench.py
 python3 bench_internal.py
 ./getenv.sh
 cp conf_$(hostname).txt ../results/
-cp results.csv ../results/results_$(hostname).txt
-cp results_internal.csv ../results/results_internal_$(hostname).txt
+cp results_$(hostname).csv ../results/
+cp results_$(hostname)_internal.csv ../results/
 
 Now you can play with R!
