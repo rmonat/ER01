@@ -1,0 +1,6 @@
+model name	: Intel(R) Core(TM) i7-4712HQ CPU @ 2.30GHz
+Linux XPSR 4.4.0-47-generic #68-Ubuntu SMP Wed Oct 26 19:39:52 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+g++ (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+Python 3.5.2
+ocamlbuild 4.02.1
+gdc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
