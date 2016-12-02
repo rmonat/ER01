@@ -13,7 +13,7 @@ Pad vrac: http://pad.aliens-lyon.fr/p/ER01CLMM--
 
 * Compile all executables                                              :TODO:
 Use ~make~ in main dir to make all executables.  Then, go into
-generation and run mkdir generated and then ./run_generation.sh Then,
+generation and run ./run_generation.sh Then,
 to launch the benchmarks, go into sortalgo and run python3 bench.py
 (/!\, be sure to remove results.csv before)
 
