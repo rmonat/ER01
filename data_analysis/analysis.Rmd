@@ -18,7 +18,7 @@ loading the library ggplot2 for nice plot functions
 library(ggplot2)
 ```
 
-loading our data from a csv file
+loading our data from our csv file
 ```{r}
 sort_data = read.csv("../results.csv")
 summary(sort_data)
@@ -26,26 +26,62 @@ str(sort_data)
 
 ```
 
-first ploting function, it is not very clear
+first ploting function, there are too many things to observe so later we filter by language to have clearer graphs
 ```{r}
-
-ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=factor(Options))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Language)
+ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=factor(Machine))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_grid( Language ~ Options)
+```
+a second plotting function for all the data
+```{r}
+ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=factor(Machine))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Language)
+```
+a third without differentiating by machine
+```{r}
+ggplot( data = sort_data, aes(x=Input_size, y=Execution_time, color=Language)) + geom_point() + scale_x_log10() + scale_y_log10()
 ```
 
-filtering by language, or size, or anything
+selecting only the best optimisation for CPP and D
+```{r}
+data_optim = subset(sort_data,  Options == "O3" | Options == "")
+summary(data_optim)
+str(data_optim)
+
+ggplot( data = data_optim, aes(x=Input_size, y=Execution_time, color=factor(Machine))) + geom_point() + scale_x_log10() + scale_y_log10() + facet_wrap(~  Language )
+
+ggplot( data = data_optim, aes(x=Input_size, y=Execution_time, color=Language)) + geom_point() + scale_x_log10() + scale_y_log10() 
+
 ```{r}
 
-data_cpp = subset(sort_data, Language == "CPP")
+```
 
+filtering by language, and plotting again
+```{r}
+data_cpp = subset(sort_data, Language == "CPP")
 
 str(data_cpp)
 
-ggplot( data = data_cpp, aes(x= Input_size, y = Execution_time, color=Input_name)) + geom_point() + theme_bw() + geom_smooth(method = "loess") + scale_x_log10() + scale_y_log10() + facet_wrap(~ Options) 
+ggplot( data = data_cpp, aes(x=Input_size, y=Execution_time, color=Machine)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Options) 
 
 
 ```
 
 ```{r}
+data_D = subset(sort_data, Language == "D")
 
+
+str(data_D)
+
+ggplot( data = data_D, aes(x= Input_size, y = Execution_time, color=Machine)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10() + facet_wrap(~ Options)
+```
+
+```{r}
+data_ocaml = subset(sort_data, Language == "OCaml")
+str(data_ocaml)
+ggplot( data = data_ocaml, aes(x=Input_size, y=Execution_time, color=Machine)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10()
+```
+
+```{r}
+data_python = subset(sort_data, Language == "Python")
+str(data_python)
+ggplot( data = data_python, aes(x=Input_size, y=Execution_time, color=Machine)) + geom_point() + theme_bw() + scale_x_log10() + scale_y_log10()
 ```
 
