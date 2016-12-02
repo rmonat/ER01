@@ -2,6 +2,7 @@ import subprocess
 import timeit
 import csv
 import os
+import random
 
 conf = csv.reader(open("executables.csv"))
 input_files = ['10-1.in', '10-2.in', '10-3.in', '10-4.in', '10-5.in', '100-1.in', '100-2.in', '100-3.in', '100-4.in', '100-5.in', '1000-1.in', '1000-2.in', '1000-3.in', '1000-4.in', '1000-5.in', '10000-1.in', '10000-2.in', '10000-3.in', '10000-4.in', '10000-5.in', '100000-1.in', '100000-2.in', '100000-3.in', '100000-4.in', '100000-5.in', '1000000-1.in', '1000000-2.in', '1000000-3.in', '1000000-4.in', '1000000-5.in', '10000000-1.in', '10000000-2.in', '10000000-3.in', '10000000-4.in', '10000000-5.in']#, '100000000-1.in', '100000000-2.in', '100000000-3.in', '100000000-4.in', '100000000-5.in']
@@ -27,9 +28,10 @@ def bench(ex, i):
 csv.write("Machine,Language,Algorithm,Options,Executable_used,Input_name,Input_size,Execution_time\n")
 machine = os.uname()[1]
 tmp = conf.__next__() # we don't want the header...
-for ex in conf:
-    for i in input_files:
-        bench(ex, "../generation/generated/" + i)
+todo = [(c, i) for c in conf for i in input_files]
+random.shuffle(todo)
+for (ex, i) in todo:
+    bench(ex, "../generation/generated/" + i)
         
         
 csv.close()

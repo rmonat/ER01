@@ -1,4 +1,4 @@
-import std.algorithm, std.stdio;
+import std.algorithm, std.stdio, std.datetime;
 
 void main () {
 	int[] arr;
@@ -9,6 +9,10 @@ void main () {
 	for (ulong i=0; i<len; ++i) {
 		readf(" %d", &arr[i]);
 	}
-	
-	arr.sort();
+	{
+	    auto mt = measureTime!((TickDuration a) {
+		    writeln(a.msecs());
+	    });
+		arr.sort();
+	}
 }
